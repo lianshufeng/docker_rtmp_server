@@ -16,6 +16,21 @@ docker run -d -p 1935:1935 -p 8080:8080 -v custom.conf:/etc/nginx/nginx.conf lia
 ```
 where `custom.conf` is the new conf file for Nginx.
 
+
+docker-compose.yml
+````shell
+version: "3"
+
+services:
+  rtmp:
+    image: lianshufeng/rtmp:latest
+    ports:
+      - "1935:1935"
+      - "1938:8080"
+    container_name: rtmp
+    restart: always
+````
+
 ### To stream to the server
  * **Stream live RTMP content to:**
 	```
